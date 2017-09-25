@@ -35,13 +35,16 @@ var todoList = {
       // }
       
       this.todos.forEach(function(todo) {
-        todo.completed === false;
+        todo.completed = false;
       });
     // Case 2: Otherwise, make everything true.
     } else {
-      for (var i = 0; i < totalTodos; i++) {
-        this.todos[i].completed = true;
-      }      
+      // for (var i = 0; i < totalTodos; i++) {
+      //   this.todos[i].completed = true;
+      // }
+      this.todos.forEach(function(todo) {
+        
+      });
     }
   }
 };
