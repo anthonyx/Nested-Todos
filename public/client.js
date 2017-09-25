@@ -28,24 +28,15 @@ var todoList = {
       }
     });
     
-    // Case 1: If everything’s true, make everything false.
-    if (completedTodos === totalTodos) {
-      // for (var i = 0; i < totalTodos; i++) {
-      //   this.todos[i].completed = false;
-      // }
-      
-      this.todos.forEach(function(todo) {
+    this.todos.forEach(function(todo) {
+      // Case 1: If everything’s true, make everything false.
+      if(completedTodos === totalTodos) {
         todo.completed = false;
-      });
-    // Case 2: Otherwise, make everything true.
-    } else {
-      // for (var i = 0; i < totalTodos; i++) {
-      //   this.todos[i].completed = true;
-      // }
-      this.todos.forEach(function(todo) {
-        
-      });
-    }
+      } else {
+      // Case 2: Otherwise, make everything true.
+        todo.completed = true;
+      }
+    });
   }
 };
 
