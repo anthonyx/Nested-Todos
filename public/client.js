@@ -44,11 +44,6 @@ var todoList = {
 };
 
 var handlers = {
-  // eventListener: function() {
-  //   debugger;
-  //   var event = document.getElementById('addTodoTextInput');
-  //   event.addEventListener("keydown", function() {console.log('hey baby')});
-  // },
   addTodo: function() {
     var addTodoTextInput = document.getElementById('addTodoTextInput');
     if(addTodoTextInput.value === "") {
@@ -143,31 +138,26 @@ var view = {
     });
     var todosDiv = document.querySelector('input')
     todosDiv.addEventListener('keydown', function(event) {
-      var eventType = event.target.id
-      var runFunction = function() {if(eventType === 'addTodoTextInput') {
-          return handlers.addTodo
+      var eventType = event.target.id;
+      var runFunction;
+      if(eventType === 'addTodoTextInput') {
+          runFunction = handlers.addTodo
         } else if (eventType === 'changeTodoTextInput') {
-          return handlers.changeTodo
+          runFunction = handlers.changeTodo
         } else if (eventType === 'toggleCompletedPositionInput') {
-          return handlers.toggleCompleted
+          runFunction = handlers.toggleCompleted
         }
       };
       var elementKeydown = event.keyCode;
       if (elementKeydown === 13) {
         runFunction()
-      }
+      };
     });
     
   }
 };
 
 view.setUpEventListeners();
-
-
-
-
-
-
 
 
 
