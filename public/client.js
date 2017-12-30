@@ -140,10 +140,16 @@ var view = {
         //Run handlers.deleteTodo(position).
         handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
       }
-    }); 
-    todosUl.addEventListener('keydown', function(event) {
-      var elementKeydown = event.target;
-      console.log('hey baby');
+    });
+    var todosDiv = document.querySelector('#addTodoTextInput')
+    todosDiv.addEventListener('keydown', function(event) {
+      debugger;
+      var elementKeydown = event.keycode;
+      if (elementKeydown = 13) {
+        handlers.addTodo()
+      } else {
+        return
+      }
     });
     
   }
