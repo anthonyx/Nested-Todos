@@ -143,12 +143,9 @@ var view = {
     });
     var todosDiv = document.querySelector('#addTodoTextInput')
     todosDiv.addEventListener('keydown', function(event) {
-      debugger;
-      var elementKeydown = event.keycode;
-      if (elementKeydown = 13) {
+      var elementKeydown = event.keyCode;
+      if (elementKeydown === 13) {
         handlers.addTodo()
-      } else {
-        return
       }
     });
     
