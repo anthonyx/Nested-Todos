@@ -44,10 +44,11 @@ var todoList = {
 };
 
 var handlers = {
-  eventListener: function() {
-    var event = document.getElementById('addTodoTextInput');
-    event.addEventListener("text", 
-  },
+  // eventListener: function() {
+  //   debugger;
+  //   var event = document.getElementById('addTodoTextInput');
+  //   event.addEventListener("keydown", function() {console.log('hey baby')});
+  // },
   addTodo: function() {
     var addTodoTextInput = document.getElementById('addTodoTextInput');
     if(addTodoTextInput.value === "") {
@@ -140,6 +141,11 @@ var view = {
         handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
       }
     }); 
+    todosUl.addEventListener('keydown', function(event) {
+      var elementKeydown = event.target;
+      console.log('hey baby');
+    });
+    
   }
 };
 
