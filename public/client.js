@@ -141,8 +141,10 @@ var view = {
         handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
       }
     });
-    var todosDiv = document.querySelector('#addTodoTextInput')
+    var todosDiv = document.querySelector('input')
     todosDiv.addEventListener('keydown', function(event) {
+      var eventType = event.target.id
+      debugger;
       var elementKeydown = event.keyCode;
       if (elementKeydown === 13) {
         handlers.addTodo()
