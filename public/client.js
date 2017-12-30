@@ -17,6 +17,9 @@ var todoList = {
     todo.completed = !todo.completed;
   },
   toggleAll: function() {
+    
+    // Get total todos
+    
     var totalTodos = this.todos.length;
     var completedTodos = 0;
     
@@ -41,10 +44,18 @@ var todoList = {
 };
 
 var handlers = {
+  eventListener: function() {
+    var event = document.getElementById('addTodoTextInput');
+    event.addEventListener("text", 
+  },
   addTodo: function() {
     var addTodoTextInput = document.getElementById('addTodoTextInput');
+    if(addTodoTextInput.value === "") {
+      return
+    } else {
     todoList.addTodo(addTodoTextInput.value);
     addTodoTextInput.value = '';
+    }
     view.displayTodos();
   },
   changeTodo: function() {
