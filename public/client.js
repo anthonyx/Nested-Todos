@@ -147,13 +147,12 @@ var view = {
         } else if (eventType === 'toggleCompletedPositionInput') {
           runFunction = handlers.toggleCompleted
         }
-      };
+      });
       var elementKeydown = event.keyCode;
       if (elementKeydown === 13) {
+        debugger;
         runFunction()
       };
-    });
-    
   }
 };
 
