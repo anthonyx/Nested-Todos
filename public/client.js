@@ -138,7 +138,9 @@ var view = {
     });
     var todosDiv = document.querySelector('input')
     todosDiv.addEventListener('keydown', function(event) {
+      debugger;
       var eventType = event.target.id;
+      var elementKeydown = event.keyCode;
       var runFunction;
       if(eventType === 'addTodoTextInput') {
           runFunction = handlers.addTodo
@@ -146,13 +148,11 @@ var view = {
           runFunction = handlers.changeTodo
         } else if (eventType === 'toggleCompletedPositionInput') {
           runFunction = handlers.toggleCompleted
-        }
-      });
-      var elementKeydown = event.keyCode;
+        };
       if (elementKeydown === 13) {
-        debugger;
-        runFunction()
+        handlers.addTodo
       };
+    });
   }
 };
 
