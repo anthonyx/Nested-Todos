@@ -136,21 +136,25 @@ var view = {
         handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
       }
     });
-    var todosDiv = document.querySelector('input')
-    todosDiv.addEventListener('keydown', function(event) {
-      debugger;
-      var eventType = event.target.id;
+    var addDiv = document.getElementById('addTodoTextInput');
+    addDiv.addEventListener('keydown', function(event) {
       var elementKeydown = event.keyCode;
-      var runFunction;
-      if(eventType === 'addTodoTextInput') {
-          runFunction = handlers.addTodo
-        } else if (eventType === 'changeTodoTextInput') {
-          runFunction = handlers.changeTodo
-        } else if (eventType === 'toggleCompletedPositionInput') {
-          runFunction = handlers.toggleCompleted
-        };
       if (elementKeydown === 13) {
-        handlers.addTodo
+        handlers.addTodo();
+      };
+    });
+    var changeDiv = document.getElementById('changeTodoTextInput');
+    changeDiv.addEventListener('keydown', function(event) {
+      var elementKeydown = event.keyCode;
+      if (elementKeydown === 13) {
+        handlers.changeTodo();
+      };
+    });
+    var toggleDiv = document.getElementById('toggleCompletedPositionInput');
+    toggleDiv.addEventListener('keydown', function(event) {
+      var elementKeydown = event.keyCode;
+      if (elementKeydown === 13) {
+        handlers.toggleCompleted();
       };
     });
   }
