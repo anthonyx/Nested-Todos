@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Practical Todos</title>
-    <link id="favicon" rel="icon" href="https://hyperdev.com/favicon.ico" type="image/x-icon">
   </head>
   <body>
     <h1>Todo List</h1>
@@ -18,17 +17,17 @@
     
     <div>
       <button onclick="handlers.changeTodo()">Change Todo</button>
-      <input id="changeTodoPositionInput" type="number">
+      <input id="changeTodoPositionInput" type="text">
       <input id="changeTodoTextInput" type="text">
     </div>
     
     <div>
       <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
-      <input id="toggleCompletedPositionInput" type="number">
+      <input id="toggleCompletedPositionInput" type="text">
     </div>
     
     <ul>
     </ul>
-    <script src="/client.js"></script>
+    <script src="../public/nestedTodo_client.js"></script>
   </body>
 </html>
